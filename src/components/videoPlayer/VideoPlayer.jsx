@@ -1,14 +1,15 @@
 import React from "react";
+import { Grid } from "@material-ui/core";
 import { useMachine } from "../../util/UseMachine";
 import { videoMachine } from "../../util/VideoMachine";
-import { Grid } from "@material-ui/core";
 import Controller from "./Controller";
 
 const VideoPlayer = () => {
+  
   const [current, send] = useMachine(videoMachine);
+
   const State = ({ state }) => <h1>{state}</h1>;
 
-  console.log(current);
   return (
     <Grid
       container
